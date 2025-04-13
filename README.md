@@ -1,5 +1,3 @@
-# Bionic-Dog-Model-2
-
 # WaveGo Bionic Dog - Raspberry Pi + ROS2 Setup Guide
 
 ## 📦 Requirements
@@ -73,6 +71,14 @@ vncserver
 ```
 - Use VNC Viewer on laptop (connect to `<ip>:1`)
 
+### 7. Enable Camera
+```bash
+sudo apt install v4l-utils
+v4l2-ctl --list-devices
+ls /dev/video*
+```
+If `/dev/video0` not found: Check cable and camera support.
+
 ---
 
 ## 🤖 ROS2 Installation
@@ -104,16 +110,6 @@ source ~/.bashrc
 
 ---
 
-## 📷 Enable Camera
-```bash
-sudo apt install v4l-utils
-v4l2-ctl --list-devices
-ls /dev/video*
-```
-If `/dev/video0` not found: Check cable and camera support.
-
----
-
 ## 🧠 Advanced Features Plan
 ### ✅ Navigation Stack
 - SLAM / Waypoint navigation
@@ -132,10 +128,5 @@ If `/dev/video0` not found: Check cable and camera support.
 
 ---
 
-## 🚀 Final Notes
-- Always monitor CPU and temp usage
-- Use heat sinks and proper power supply
-- ROS2 nodes should be tested incrementally
 
----
 
